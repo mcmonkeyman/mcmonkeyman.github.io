@@ -9,11 +9,11 @@ categories: scala
 As developers we frequently come up against 'well worn problems'. These problems have been solved
 time and time again and often there are a number of solutions readily available.
 
-Alternatively we need to integrate with a technology or product and there is no stand out driver
+Alternatively we need to integrate with a technology or product and there is no stand out solution
 for our current language or framework.
 
-If there are a number of off the shelve solutions we often anchor to the technology we know. 
-While this often works out we sometimes miss out on a more robust and maintainable solution.
+Furthermore, If there are a number of of the shelve solutions we often anchor to the technology we know. 
+While this often works out sometimes we miss out on an easier, more robust, maintainable solution.
 One way to guard against this is to 'go shopping'.
 
 Things to consider when going shopping:
@@ -23,7 +23,7 @@ Things to consider when going shopping:
   * Last update
   * Over all commits
   * Active users
-
+  * Test quality and coverage
 {% highlight scala %}
 {% endhighlight %}
 
