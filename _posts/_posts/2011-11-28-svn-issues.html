@@ -1,0 +1,26 @@
+---
+layout: post
+title: SVN issues
+date: 2011-11-28 19:34:55.000000000 -05:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _edit_last: '16527278'
+author:
+  login: eoinoconnor
+  email: eoin4real@gmail.com
+  display_name: Eoin O'Connor
+  first_name: ''
+  last_name: ''
+---
+<p>Had a problem after I restructured webpage and the coda's SVN commit failed. The solution was to resolve conflicts and push repository  over the command line.</p>
+<p>Commands from <a href="http://stackoverflow.com/questions/2406469/svn-remains-in-conflict">this link</a>:<code><br />
+svn remove --force filename<br />
+svn resolve --accept=working filename<br />
+svn commit<br />
+</code></p>
+<p>A secondary issue was that theSVN_EDITOR variable needed to be set. A <a href="http://www.antbrown.com/web-development/svn-could-not-use-external-editor-to-fetch-log-message/">work around</a> is to  use the  -m "" flag.</p>
+<p>&nbsp;</p>

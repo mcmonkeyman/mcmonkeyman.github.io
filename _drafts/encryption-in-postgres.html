@@ -1,0 +1,61 @@
+---
+layout: post
+title: Encryption in Postgres
+date: 
+type: post
+published: false
+status: draft
+categories: []
+tags: []
+meta:
+  _edit_last: '16527278'
+  _oembed_658b8d94d870408f04f8d51ccc4e9cf3: "{{unknown}}"
+author:
+  login: eoinoconnor
+  email: eoin4real@gmail.com
+  display_name: Eoin O'Connor
+  first_name: ''
+  last_name: ''
+---
+<p>Requirement</p>
+<p>A client wanted to securely store some specific fields in the db. We are using Postgres 9.2 to store the data and it appears that column specific encryption or obfuscation will be sufficient for our needs.</p>
+<p>Background  Reading</p>
+<p>http://www.postgresql.org/docs/9.2/static/encryption-options.html</p>
+<p>Options</p>
+<p>Client-Side Encryption or Encryption For Specific Columns</p>
+<p>Install Pgcrypto</p>
+<p>Turns out its already installed if you installed Postgres using the .app method.<br />
+Create extension pgcrypto;</p>
+<p>Create Database, Schema and Table</p>
+<p>--DROP DATABASE sampledb;<br />
+--<br />
+-- CREATE DATABASE sampledb<br />
+--   WITH OWNER = postgres<br />
+--        ENCODING = 'UTF8'<br />
+--        TABLESPACE = pg_default<br />
+--        LC_COLLATE = 'C'<br />
+--        LC_CTYPE = 'C'<br />
+--        CONNECTION LIMIT = -1;</p>
+<p>-- CREATE TABLE sampledb.users<br />
+-- (<br />
+--   user_id serial NOT NULL,<br />
+--   username character varying(254) NOT NULL,<br />
+--   password character varying,<br />
+--   first_name bytea NOT NULL,<br />
+--   last_name bytea NOT NULL<br />
+-- );</p>
+<p>INSERT INTO  users(user_id,username,password,first_name,last_name)  VALUES<br />
+(<br />
+1,<br />
+'sampleuser',<br />
+crypt('password' , gen_salt( 'md5')),<br />
+encrypt('samplefirstname','key','aes'),<br />
+encrypt('samplelastname','key','aes')<br />
+);</p>
+<p>SELECT<br />
+password=crypt('password', password),<br />
+password=crypt('incorrectpassword', password),<br />
+CAST(decrypt(first_name, 'key', 'aes') AS CHARACTER VARYING ),<br />
+CAST(decrypt(last_name, 'key', 'aes') AS CHARACTER VARYING ),<br />
+*<br />
+FROM users;</p>

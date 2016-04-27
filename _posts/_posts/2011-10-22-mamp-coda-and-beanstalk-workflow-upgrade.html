@@ -1,0 +1,49 @@
+---
+layout: post
+title: 'MAMP, Coda and BeanStalk: Workflow upgrade'
+date: 2011-10-22 14:47:21.000000000 -04:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _edit_last: '16527278'
+  _oembed_ac106ba45d92329ca1b6eb7bb5b91fba: "{{unknown}}"
+author:
+  login: eoinoconnor
+  email: eoin4real@gmail.com
+  display_name: Eoin O'Connor
+  first_name: ''
+  last_name: ''
+---
+<p>After playing around on the eoin.ie workflow for a bit I have settled on a setup that I'm more happy with. Previously I was simply editing files and ftping them to the live site, a bad setup to say the least. The new setup allows me to edit and preview the site locally using MAMP, commit changes to my SVN repository on BeanStalk and when ready publish the site using Coda. Below the necessary steps taken to achieve this setup are laid out:</p>
+<p>1.Setup MAMP</p>
+<p>The first step involved downloading the free version of  MAMP, installing it  and running it. The process was a synch and the  I only changed two settings:</p>
+<ul>
+<li>In the Apache tab I changed the Document root to /Users/my_user_account/Sites</li>
+<li>In the Start/Stop tab I unchecked the 'Check for MAMP pro when starting MAMP' box.</li>
+</ul>
+<p>2.Add multiple site support to MAMP</p>
+<ul>
+<li>First,  I made a folder  /Users/my_user_account/Sites/eoin.ie, where eoin.ie is the new folder that will hold my local copy of the site.</li>
+<li>Next I changed /private/etc hosts/ to include the name I wanted to use to access this new local copy of the site.</li>
+<li> Next I added a virtual host by editing /Applications/MAMP/conf/apache/httpd.conf. This ensures that the local site  uses  the correct root. The full instructions can be found on <a href="http://www.brockboland.com/comment/826">Brocks blog post</a> .</li>
+</ul>
+<p>3.Setup Beanstalk account and import old site</p>
+<p>This was a relatively straight forward step. Beanstalk offer a free SVN account so its perfect for my uses, I imported a zip of my current site to the root and had to delete some of the Mac system files that came along for the ride. There is a good <a href="http://basementjack.com/uncategorized/video-coda-subversion-beanstalk-how-to/">video tutoria</a>l for this, even if it is a little drawn out for my tastes.</p>
+<p>4.Setup Coda</p>
+<p>I Installed Coda, added a Site and changed the settings for the site:</p>
+<ul>
+<li> I set the local site to be the empty folder from step 2.</li>
+<li>I set the  the local preview URL to be the address I put in the hosts and http.conf file in step 2,  http://local.eoin.ie:8888/ in this case.</li>
+<li>Next I entered the details from  the BeanStalk SVN account from step 3 and a copy of  the site got downloaded from the SVN to my new local, previewable copy.</li>
+<li> Finally, I entered the settings for the ftp account, available from my web hosting company. Its worth noting that in my case I had to use the /webspace/httpdocs/ subdirectory in my ftp url  for it to work.</li>
+</ul>
+<p>5.Test</p>
+<p>I tested the setup and I'm able to commit changes to my repository to my hearts content and only publish when I'm ready. I have yet to test a roll back but I'm sure I will have too soon enough:)</p>
+<p>6. Versioning  History</p>
+<p>Mac version 10.6.8</p>
+<p>Coda version 1.7.4 -  <a href="http://www.panic.com/coda/"> http://www.panic.com/coda/</a></p>
+<p>MAMP version 2.0.5 - <a href="http://www.mamp.info/en/index.html">http://www.mamp.info/en/index.html</a></p>
+<p>BeanStalk -<a href="http://www.beanstalkapp.com"> http://www.beanstalkapp.com</a></p>
