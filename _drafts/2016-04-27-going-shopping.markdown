@@ -1,33 +1,69 @@
 ---
-layout: post
-title:  "Going Shopping"
+layout: post title:
+"Going Shopping"
 date:   2016-04-27 17:54:57 -0400
 categories: scala
 ---
 
 
-As developers we frequently come up against 'well worn problems'. These problems have been solved
-time and time again and often there are a number of solutions readily available.
+# Intro
 
-Alternatively we need to integrate with a technology or product and there is no stand out solution
-for our current language or framework.
+In this post I am going to talk about 'going shopping' for a software solution
+to a 'well worn problem'.
 
-Furthermore, If there are a number of of the shelve solutions we often anchor to the technology we know. 
-While this often works out sometimes we miss out on an easier, more robust, maintainable solution.
-One way to guard against this is to 'go shopping'.
+Firstly, I will define what I mean by 'going shopping' and a 'well worn
+problem'. Then I will lay out some problems that have well worn solutions.
+Next, I will walk through a concrete example of looking for an aws S3 library
+for Scala. Finally, I will recap on what I learned from the whole process.
+
+
+# Definition
+
+I define a 'well worn problem' as: ``` A problem that has been solved time and
+time again, often using many different technology solutions.  ```
+
+Following on from that 'going shopping' is: ``` Exploring to see if the problem
+is a well worn problem for which there is a solution or many.  ```
+
+Often there are a number of off the shelve solutions readily available for the
+problem but no one stand out solution for the current language or framework.
+
+I find that I often end up anchoring to the solution I know.  While this often
+works out, I can't help but feel that I am sometimes missing out on an easier,
+more robust or maintainable solution.
+
+# Examples of well worn problems 
+
+1. Logging requests and responses for an HTTP service.  2. Formatting your code
+in a consistent manner.  3. Versioning your code releases.
+
+
+I have run into the examples above multiple times in my short career for
+numerous language-technology pairings. I think programers often take for
+granted the problems that they have already already solved. However, when we
+step back a little further we could observe that most of the day to day
+problems of web developement have been encountered before. So, even if you have
+not solved a problem personally you can often leverage the experiences of
+others to expedite your shopping experience.
+
+# S3 and Scala
+
+I recently had to write some code in Scala that talked to S3. Without any
+existing code to pattern off I needed to figure out what library to use.  A
+quick google showed a number of promissing options.
+
+## [AWScala](https://github.com/seratch/AWScala)
+
+## [Aws-Wrap](https://dwhjames.github.io/aws-wrap/doc/s3.html)
+
+## [Aws Scala](https://bitbucket.org/atlassian/aws-scala/overview)
 
 Things to consider when going shopping:
-* Async support
-* Libraries
-  * Stars
-  * Last update
-  * Over all commits
-  * Active users
-  * Test quality and coverage
-{% highlight scala %}
-{% endhighlight %}
+* Async support Libraries Stars Last update Over all commits Active users Test
+* quality and coverage
+{% highlight scala %} {% endhighlight %}
 
+# Conclusion
 
-
-Further Reading
+# Further Reading
 [jekyll-docs]: http://jekyllrb.com/docs/home
