@@ -20,13 +20,14 @@ for Scala. Finally, I will recap on what I learned from the whole process.
 # Definition
 
 I define a 'well worn problem' as: ``` A problem that has been solved time and
-time again, often using many different technology solutions.  ```
+time again, often using many different technologies.```
 
-Following on from that 'going shopping' is: ``` Exploring to see if the problem
-is a well worn problem for which there is a solution or many.  ```
+Following on from that 'going shopping' is: ```An exploration to see if the 
+problem at hand has been solved before, maybe even a number of different
+ways.```
 
 Often there are a number of off the shelve solutions readily available for the
-problem but no one stand out solution for the current language or framework.
+problem but not one that stands out for the current language or framework.
 
 I find that I often end up anchoring to the solution I know.  While this often
 works out, I can't help but feel that I am sometimes missing out on an easier,
