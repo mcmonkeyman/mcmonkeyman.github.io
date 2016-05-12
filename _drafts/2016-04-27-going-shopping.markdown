@@ -61,14 +61,28 @@ quick google showed a number of promissing options.
 * [Aws Scala](https://bitbucket.org/atlassian/aws-scala/overview)
 
 So now that I have a problem and some potential solutions how do I choose which is
-the best choice. 
+the best fit.
 
 Things to consider when going shopping:
-* Async support Libraries Stars Last update Over all commits Active users Test
-* quality and coverage
+
+* Feature set
+** Special features: Async support Libraries, integration with your framework, etc 
+* Quality
+** Test quality and coverage
+** Stars/Likes 
+** Actively maintained? Last commit, is it assigned to person, has it been
+replaced by newer and shinyer thing
+** Are there stable releases?
+** Number of bug fixes
+* Likelihood of future developemt
+** Active users 
+** Commit volume and age
+** Gitter channel/ IRC Channel
+* Ease of integraion with your stack
+
+
 {% highlight scala %} {% endhighlight %}
 
 # Conclusion
 
 # Further Reading
-[jekyll-docs]: http://jekyllrb.com/docs/home
