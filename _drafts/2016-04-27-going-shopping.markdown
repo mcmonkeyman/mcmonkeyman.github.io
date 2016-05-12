@@ -52,8 +52,10 @@ will see next.
 
 # S3 and Scala
 
-I recently had to write some code in Scala that talked to S3. Without any
-existing code to pattern off of I needed to figure out what library to use.  A
+## The Potential Solutions
+
+I recently had to write some code in Scala that talked to Amazon's S3 service. Without any
+existing code to pattern from I needed to go shopping to figure out what library to use.  A
 quick google showed a number of promissing options.
 
 * [AWScala](https://github.com/seratch/AWScala)
@@ -63,26 +65,33 @@ quick google showed a number of promissing options.
 So now that I have a problem and some potential solutions how do I choose which is
 the best fit.
 
+## Criteria for comparison
+
 Things to consider when going shopping:
 
-* Feature set
-** Special features: Async support Libraries, integration with your framework, etc 
 * Quality
 ** Test quality and coverage
 ** Stars/Likes 
 ** Actively maintained? Last commit, is it assigned to person, has it been
 replaced by newer and shinyer thing
 ** Are there stable releases?
-** Number of bug fixes
+** Number of bug fixes 
 * Likelihood of future developemt
 ** Active users 
+** Active commiters 
 ** Commit volume and age
 ** Gitter channel/ IRC Channel
+** Number of feature requests/ pull requests 
 * Ease of integraion with your stack
+* Feature set
+** Special features: Async support Libraries, integration with your framework, etc 
 
+## The Comparison
 
 {% highlight scala %} {% endhighlight %}
 
 # Conclusion
+
+It might be overkill to do this for every shopping oppertunity.
 
 # Further Reading
